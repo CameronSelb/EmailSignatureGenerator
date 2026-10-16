@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #FF5C00;
+    --color-secondary: #546CE7;
+
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+
+    --color-dark-grey: #060913;
+    --color-grey: #0a1020;
+    --color-light-grey: #1e293b;
+
+    --color-text: #f8fafc;
+    --color-text-muted: #94a3b8;
+    --color-text-dark: #303034;
+
+    --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+  outline: none;            
+  border: 2px solid var(--color-primary);
+  color: var(--color-text); 
+}
+
+select:focus {
+    outline: none;            
+    border: 2px solid var(--color-primary);
+    color: var(--color-text); 
+}
