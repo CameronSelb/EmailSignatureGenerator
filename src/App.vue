@@ -4,6 +4,7 @@ import SignatureOuput from "./components/SignatureOuput.vue";
 import SignatureForm from "./components/SignatureForm.vue";
 import SettingsTab from "./components/SettingsTab.vue";
 import Header from "./components/Header.vue";
+import { colours } from "./data/colors.js";
 
 const signature = reactive({
   first_name: "",
@@ -11,6 +12,8 @@ const signature = reactive({
   email: "",
   phone_number: "",
   job_title: "",
+  website: "",
+  colour: "slate",
 });
 
 const errors = ref({});
@@ -18,6 +21,7 @@ const errors = ref({});
 const templateData = computed(() => {
   return {
     ...signature,
+    colour: colours[signature.colour],
   };
 });
 </script>

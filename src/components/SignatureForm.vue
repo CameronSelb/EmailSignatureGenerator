@@ -1,4 +1,8 @@
 <script setup>
+import { colourOptions } from '@/data/colors';
+
+
+
 const { signature } = defineProps({
   signature: {
     type: Object,
@@ -90,6 +94,20 @@ const { signature } = defineProps({
           v-model="signature.job_title"
           placeholder="Developer"
         />
+      </div>
+
+       <div class="flex flex-col w-full">
+        <div>
+          <label for="job_title" class="text-xl font-bold mr-1">Job Title</label>
+        </div>
+        <select
+          class="mt-2 px-2 py-1 border-1 rounded-lg border-border-grey"
+          id="job_title"
+          v-model="signature.colour"
+          placeholder="Developer"
+        >
+          <option v-for="option in colourOptions" :value="option.value" class="bg-grey">{{ option.label }}</option>
+        </select>
       </div>
     </form>
   </div>

@@ -23,8 +23,14 @@ export function validateInput(signature) {
     errors.phone_number = "Phone number is required";
   } else if (!/^[+]?[\d\s()-]{7,20}$/.test(signature.phone_number)) {
     errors.phone_number = "Please enter a valid phone number";
-  } else if (signature.phone_number.slice(0,1) != '0'){
+  } else if (signature.phone_number.slice(0,1) != '0' && (signature.phone_number.slice(0,1) != '+' )){
     errors.phone_number = "Needs to start with '0' or international code e.g. '+27'";
+  }
+
+  if (!signature.job_title?.trim()) {
+    errors.job_title = "Job title is required";
+  } else if (!/^[A-Za-z]*$/.test(signature.job_title)) {
+    errors.job_title = "Please enter a job title (just letters)";
   }
 
   return {

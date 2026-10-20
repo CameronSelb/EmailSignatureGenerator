@@ -59,10 +59,6 @@ async function submitFormCopy() {
       copied.value = false
     }, 2000)
 }
-
-const isNameFilled = computed(() => {
-  return !props.signature.first_name || !props.signature.last_name;
-});
 </script>
 
 <template>
@@ -106,7 +102,6 @@ const isNameFilled = computed(() => {
     <div class="w-full flex flex-row justify-between">
       <button
         @click="submitFormCopy"
-        :disabled="isNameFilled"
         class="text-dark-text text-base px-4 py-2 rounded-full font-bold bg-primary border-2 border-primary hover:bg-grey hover:text-text disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {{ copied ? "✓ Signature Copied" : "Copy Signature" }}
@@ -114,7 +109,6 @@ const isNameFilled = computed(() => {
 
       <button
         @click="submitFormDownload"
-        :disabled="isNameFilled"
         class="text-text text-base px-4 py-2 rounded-full font-bold bg-grey border-2 border-primary hover:bg-primary hover:text-text-dark disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {{ downloaded ? "✓ Signature Downloaded" : "Download Signature" }}
