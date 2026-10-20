@@ -15,18 +15,15 @@ const showSettings = ref(false);
   <div class="mt-4 p-2 md:p-4 border-1 border-light-grey rounded-lg text-text">
     <div class="flex items-center justify-between">
       <div class="w-full md:w-1/2 items-center gap-1">
-        <label for="city" class="text-md"
-          ><span class="underline decoration-primary decoration-2"
-            >Email signature</span
-          >
-          for:</label
-        >
+        <p for="city" class="text-md">
+          <span class="underline decoration-primary decoration-2">Email signature</span> settings.
+        </p>
       </div>
       <div>
         <!-- No settings yet so hidding this button -->
         <button
           @click="showSettings = !showSettings"
-          class="hidden text-md px-2 py-1 rounded-full font-bold border-2 border-primary hover:bg-light-grey text-text font-normal"
+          class="text-md px-2 py-1 rounded-full font-bold border-2 border-primary hover:bg-light-grey text-text font-normal"
         >
           <span class="flex items-center justify-between gap-1">
             <svg
@@ -46,8 +43,9 @@ const showSettings = ref(false);
         </button>
       </div>
     </div>
-    <div id="settingsTab" :class="{ hidden: !showSettings }">
+    <div v-if="showSettings" id="settingsTab">
       <!-- add settings in here when needed -->
+       There are currently no settings
     </div>
   </div>
 </template>
